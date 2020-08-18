@@ -1,0 +1,21 @@
+body {
+    background-color: rgba(236, 239, 241, 1);
+    font-family: "Raleway", sans-serif;
+    
+    
+}
+
+.center {
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+}
+.card {
+    margin: 12rem auto;
+}
+
+.center {
+    text-align: center;
+    
+    
+}
