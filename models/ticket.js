@@ -8,13 +8,6 @@ const ticketSchema = new mongoose.Schema({
     title: String,
     status: String,
     details: String,
-    author: {
-        username: String,
-        id: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "User"
-        }
-    },
     submitter: {
         username: String,
         id: {
@@ -22,10 +15,24 @@ const ticketSchema = new mongoose.Schema({
             ref: "User"
         }
     },
+    developer: {
+        username: String,
+        id: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "User"
+        }
+    },
+    /*
     project: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Project"
+    },
+    */
+    comments: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Comment"
     }
+
 })
 
 

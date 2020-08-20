@@ -11,7 +11,7 @@ const methodOverride = require("method-override"),
 
 
 
-//seedDb();
+seedDb();
 const port = process.env.PORT || 3000;
 
 const db = "demo"

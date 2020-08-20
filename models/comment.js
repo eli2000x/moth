@@ -11,11 +11,12 @@ const commentSchema = new mongoose.Schema({
             ref: "User"
         }
     },
-
+    /*
     ticket: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Ticket"
     }
+    */
     
 });
 
