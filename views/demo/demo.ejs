@@ -1,0 +1,109 @@
+<%- include("../partials/header") %>
+    <link rel="stylesheet" href="/stylesheets/index.css">
+    <title>Sign In - Moth</title>
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="card login" style="width: 25rem;">
+            <div class="card-body">
+                
+                <div class="d-flex justify-content-center mt-4">
+                    <img src="/assets/moth.png" alt="" width=40 height=40>
+                </div>
+                    
+                <div class="d-flex justify-content-center mt-2">
+                    <h1 class="card-title">Moth</h1>
+                </div>
+                
+                
+            </div>
+            <div class="container">
+                <div class="row mb-4">
+                    
+                    <div class="col-6 center">
+
+                        <form action="/login" method="POST">
+                            <input class="d-none" type="text" name="username" value="Demo Admin">
+                            <input class="d-none" type="text" name="password" value="34">
+                            <button type="submit" class="none"><p><i class="fas fa-user-shield fa-5x demo_user"></i></p></button>
+                    
+                        </form>
+
+                        
+                        <p>Administrator</p>
+    
+                    </div>
+                    <div class="col-6 center">
+                        <form action="/login" method="POST">
+                            <input class="d-none" type="text" name="username" value="Demo Project Manager">
+                            <input class="d-none" type="text" name="password" value="56">
+                            <button type="submit" class="none"><p><i class="fas fa-user-cog fa-5x demo_user"></i></p></button>
+                    
+                        </form>
+
+                        <p>Project Manager</p>
+    
+                    </div>
+    
+                </div>
+
+                <div class="row">
+                    <div class="col-6 center">
+
+                        <form action="/login" method="POST">
+                            <input class="d-none" type="text" name="username" value="Demo Submitter">
+                            <input class="d-none" type="text" name="password" value="78">
+                            <button type="submit" class="none"><p><i class="fas fa-user-edit fa-5x demo_user"></i></p></button>
+                    
+                        </form>
+                   
+                        <p>Submitter</p>
+    
+                    </div>
+                    <div class="col-6 center">
+
+                        <form action="/login" method="POST">
+                            <input class="d-none" type="text" name="username" value="Demo Developer">
+                            <input class="d-none" type="text" name="password" value="910">
+                            <button type="submit" class="none"><p><i class="fas fa-user fa-5x demo_user"></i></p></button>
+                    
+                        </form>
+                        
+                        <p>Developer</p>
+    
+                    </div>
+
+
+                </div>
+
+                
+                <div class="d-block center mt-4">Have an Account?</div>
+                <a class="center mb-5" href="/login"> Sign In</a>
+                
+
+
+
+            </div>
+    
+            
+            
+        </div>
+
+
+    </div>
+    
+        
+
+
+    
+    
+    
+
+
+
+
+
+<%- include("../partials/footer") %>
+

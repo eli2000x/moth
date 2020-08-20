@@ -1,0 +1,32 @@
+body {
+    background-color: rgba(236, 239, 241, 1);
+    font-family: "Raleway", sans-serif;
+    
+}
+
+.center {
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+    text-align: center;
+}
+.login {
+    margin: 12rem auto;
+}
+
+.register {
+    margin: 10rem auto;
+}
+
+.demo_user {
+    color: #343a40;
+}
+
+.error {
+    color: #c62928;
+    font-size: 12px;
+}
+.none {
+    border: none;
+    background: none;
+}
