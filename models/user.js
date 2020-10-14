@@ -9,7 +9,7 @@ const userSchema = new mongoose.Schema({
     role: String,
     kind: String,
     
-
+    // project maybe unnecessary
     projects: [
         {
             type: mongoose.Schema.Types.ObjectId,
