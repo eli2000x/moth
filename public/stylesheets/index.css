@@ -11,6 +11,10 @@ hr {
     background-image: linear-gradient(to right, #ccc, #333, #ccc);
 }
 
+#cent {
+    margin: auto auto;
+}
+
 .error {
     color: #c62928;
     font-size: 12px;
@@ -39,10 +43,6 @@ hr {
 
 .graph {
     border: 15px solid #343a40;
-}
-
-#cent {
-    margin: auto auto;
 }
 
 .width {
