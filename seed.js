@@ -251,9 +251,7 @@ function seedUsers() {
                     User.register(newUser, account.password, function(err, createdUser) {
                         if (err) {
                             console.log(err.message);
-                        } else {
-                            //console.log("added a user");
-                        }
+                        } 
     
                     });
     
@@ -282,10 +280,7 @@ function seedProjects() {
                 Project.create(project, function(err, createdProject) {
                     if (err) {
                         console.log(err.message);
-                    } else {
-                        //console.log("added a project");
-                        
-                    }
+                    } 
                 });
 
             });
@@ -301,14 +296,11 @@ function seedTickets () {
         if (err) {
             console.log(err.message);
         } else {
-            //console.log("removed demo tickets");
             tickets.forEach((ticket) => {
                 Ticket.create(ticket, function(err, createdTicket) {
                     if (err) {
                         console.log(err.message);
-                    } else {
-                        //console.log("added a ticket");
-                    }
+                    } 
                 });
             });
         }
@@ -324,14 +316,11 @@ function seedComments() {
         if (err) {
             console.log(err.message);
         } else {
-            //console.log("removed demo comments");
             comments.forEach(function(comment) {
                 Comment.create(comment, function(err, createdComment) {
                     if (err) {
                         console.log(err.message);
-                    } else {
-                        //console.log("added a comment");
-                    }
+                    } 
                 });
             });
         }
