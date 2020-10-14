@@ -8,30 +8,17 @@ const ticketSchema = new mongoose.Schema({
     title: String,
     status: String,
     details: String,
-    submitter: {
-        username: String,
-        id: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "User"
-        }
-    },
-    developer: {
-        username: String,
-        id: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "User"
-        }
-    },
-    /*
-    project: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Project"
-    },
-    */
-    comments: {
+    kind: String,
+    developer: String,
+    project: String,
+    submitter: String,
+   
+    comments: [
+        {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Comment"
-    }
+        }
+    ]
 
 })
 

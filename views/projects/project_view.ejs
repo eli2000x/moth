@@ -1,0 +1,135 @@
+<%- include("../partials/header") %>
+<%- include("../partials/nav") %>
+
+<head>
+    
+    <title>View Project - Moth</title>
+
+</head>
+<body>
+
+    <div class="container my-3 graph">
+        <h1 class="display-5 my-3"><%= project.name %></h1>
+
+        <a class="btn btn-primary" href="\assignments">Back to Assignments</a>
+        
+
+        <div class="row">
+            <div class="form-group mt-3 col-6">
+                <label><strong>Description</strong></label>
+                <p><%= project.details %></p>
+                <hr>
+            </div>
+
+            <div class="form-group mt-3 col-6">
+                <label><strong>Project Manager</strong></label>
+                <p><%= project.manager %></p>
+                <hr>
+            </div>
+
+            <div class="form-group mt-3 col-6">
+                <label><strong>Author</strong></label>
+                <p><%= project.author %></p>
+            </div>
+
+            <div class="form-group mt-3 col-6">
+                <label><strong>Created</strong></label>
+                <p><%= project.created %></p>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <div class="container">
+        <div class="row d-flex justify-content-between">
+            <div class="width graph">
+                <h1 class="display-5 m-3">Users</h1>
+
+                <table class="table">
+
+                    <thead>
+                        <tr>
+                            <th scope="col">Username</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Role</th>
+                            
+                        </tr>
+                    </thead>
+        
+                    <tbody>
+        
+                        <% users.forEach(function(user) { %>
+                            <tr>    
+                                <td><%= user.username %></td>
+                                <td><%= user.email %></td>
+                                <td><%= user.role %></td>
+                    
+                            </tr>
+        
+                        <% }) %>
+        
+        
+                    </tbody>
+                </table>
+                
+    
+    
+            </div>
+
+            <div class="width graph">
+
+                <h1 class="display-5 m-3">Tickets</h1>
+
+                <table class="table">
+
+                    <thead>
+                        <tr>
+                            <th scope="col">Title</th>
+                            <th scope="col">Priority</th>
+                            <th scope="col">Created On</th>
+
+                            
+                        </tr>
+                    </thead>
+        
+                    <tbody>
+        
+                        <% tickets.forEach(function(ticket) { %>
+                            <tr>    
+                                <td><%= ticket.title %></td>
+                                <td><%= ticket.priority %></td>
+                                <td><%= ticket.created %></td>
+                                <td><a href="/ticket/<%= ticket._id %>/view">View Details</a></td>
+                    
+                            </tr>
+        
+                        <% }) %>
+        
+        
+                    </tbody>
+                </table>
+                
+    
+    
+            </div>
+
+
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+
+
+<%- include("../partials/footer") %>
+

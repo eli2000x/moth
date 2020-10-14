@@ -5,7 +5,7 @@
 </head>
 <body>
     <div class="container">
-        <div class="card register" style="width: 25rem;">
+        <div class="card" style="width: 25rem; margin: 10rem auto;">
             <div class="card-body">
                 
                 <div class="d-flex justify-content-center mt-4">
@@ -34,12 +34,18 @@
                             
                         </div>
 
-                        <div class="d-block mx-4 my-4">
-                            <input class="form-control" name="email" type="email" placeholder="E-mail Address">
+                        <div class="d-block mx-4 mt-4">
+                            <input class="form-control" name="email" type="email" placeholder="E-mail Address" required>
                             
                         </div>
 
-                        <div class="d-block justify-content-start mx-4 mb-5">
+                        <% if (error && error.length > 0) { %>
+                            <div class="d-block error mt-2 mx-4"><%= error %></div>
+
+
+                        <% } %>
+
+                        <div class="d-block justify-content-start mx-4 mt-4 mb-5">
                             <button type="submit" class="btn btn-dark btn-block">Sign Up</button>
                         </div>
                     

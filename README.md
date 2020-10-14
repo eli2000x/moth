@@ -1,4 +1,2 @@
-# moth
-Bug tracking app
-from local
-blah blah blah
+# Moth
+Simple issue tracking app using Node, Express, Mongo

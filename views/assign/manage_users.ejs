@@ -1,0 +1,127 @@
+<%- include("../partials/header") %>
+<%- include("../partials/nav") %>
+
+<head>
+    
+    <title>Manage Users - Moth</title>
+
+</head>
+<body>
+
+    <div class="container my-3 graph">
+        <h1 class="display-5 my-3">Your Personnel</h1>
+
+        
+        <table class="table">
+
+            <thead>
+                <tr>
+                    <th scope="col">Username</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Role</th>
+                    
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <% users.forEach(function(user) { %>
+
+                    <% if (user.username !== currentUser.username) { %>
+                        <tr>    
+                            <td><%= user.username %></td>
+                            <td><%= user.email %></td>
+                            <td>
+                                <form action="/manage/<%= user._id %>/update?_method=PUT" method="POST">
+                                    <div class="row">
+                                        <div class="col-9">
+                                            <select name="user[role]" class="form-control">
+                                                <option selected><%= user.role %></option>
+                                                <option>Admin</option>
+                                                <option>Project Manager</option>
+                                                <option>Developer</option>
+                                                <option>Submitter</option>
+                                            </select>
+    
+                                        </div>
+                                        <div class="col-3">
+                                            <button class="btn btn-primary">Save</button>
+    
+                                        </div>
+    
+                                    </div>
+    
+                                </form>
+                                
+                            </td>
+                            <td>
+                                <form action="/manage/<%= user._id %>/delete" method="POST">
+                                    <button class="btn btn-danger">Remove</button>
+                                    
+                                </form>
+                            </td>
+                            
+                
+                        </tr>
+
+
+                    <% } %>
+                    
+
+                <% }) %>
+
+
+            </tbody>
+        </table>
+            
+
+
+        </form>
+        
+    </div>
+
+    <div class="container my-3 graph">
+        
+        <h1 class="display-5 my-3">Add Users</h1>
+        <form action="/manage/add" method="POST">
+            <div class="row">
+                <div class="col-4">
+                    <label for="inputUsername">Username</label>
+                    <input type="text" name="username" class="form-control" id="inputUsername" required> 
+
+                </div>
+                <div class="col-4">
+                    <label for="inputRole">Role</label>
+                    <select name="user[role]" class="form-control">
+                        <option>Admin</option>
+                        <option>Project Manager</option>
+                        <option>Developer</option>
+                        <option>Submitter</option>
+                    </select>
+                </div>
+
+                <div class="col-4">
+                    <label for="inputProject">Project</label>
+                    <input type="text" name="user[project]" class="form-control" id="inputProject" required>
+                </div>
+
+
+
+            </div>
+            
+            <button class="btn btn-success my-3">Add</button>
+        </form>
+
+
+    </div>
+
+    
+
+
+
+
+
+
+
+<%- include("../partials/footer") %>
+

@@ -1,0 +1,49 @@
+<%- include("../partials/header") %>
+<%- include("../partials/nav") %>
+
+<head>
+    
+    <title>New Project - Moth</title>
+
+</head>
+<body>
+
+    <div class="container my-3 graph">
+        <h1 class="display-5 my-3">New Project</h1>
+        <a class="btn btn-primary" href="/assignments">Back to Assignments</a>
+        <form class="my-3" action="/project/new" method="POST">
+            <div class="form-row">
+                <div class="form-group col-6">
+                    <label for="inputName">Title</label>
+                    <input type="text" name="project[name]" class="form-control" id="inputName" required>
+                </div>
+                <div class="form-group col-6">
+                    <label for="inputDesc">Description</label>
+                    <input type="text" name="project[details]" class="form-control" id="inputDesc" required>
+                </div>
+                <div class="form-group col-6">
+                    <label for="inputPM">Project Manager</label>
+                    <input type="text" name="project[PM]" class="form-control" id="inputPM" required>
+                </div>
+                
+            </div>
+
+            <button type="submit" class="btn btn-primary">Create Project</button>
+
+
+
+
+
+            
+        </form>
+
+        
+        
+
+
+
+
+    </div>
+    
+<%- include("../partials/footer") %>
+

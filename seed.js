@@ -5,36 +5,37 @@ const Comment = require("./models/comment");
 const Ticket = require("./models/ticket");
 
 
+
 const users = [
     {
         username: "eli",
-        email: " ",
+        email: "eli@moth.com",
         password: "12",
-        role: "Developer",
+        role: "Admin",
         kind: "Demo"
     },
 
     {
         username: "Demo Admin",
-        email: " ",
+        email: "DemoAdmin@moth.com",
         password: "34",
-        role: "Administrator",
+        role: "Admin",
         kind: "Demo"
 
     },
 
     {
         username: "Demo Project Manager",
-        email: " ",
+        email: "DemoPM@moth.com",
         password: "56",
-        role: "Project Manager",
+        role: "PM",
         kind: "Demo"
 
     },
 
     {
         username: "Demo Submitter",
-        email: " ",
+        email: "DemoSubmitter@moth.com",
         password: "78",
         role: "Submitter",
         kind: "Demo"
@@ -44,167 +45,246 @@ const users = [
 
     {
         username: "Demo Developer",
-        email: " ",
+        email: "DemoDev@moth.com",
         password: "910",
         role: "Developer",
         kind: "Demo"
 
+    },
+
+    {
+        username: "Natan Franco",
+        email: "natan_franco@moth.com",
+        password: "1234",
+        role: "Developer",
+        kind: "Demo"
+
+    },
+
+    {
+        username: "Saara Sharpe",
+        email: "saara_sharpe@moth.com",
+        password: "5678",
+        role: "Developer",
+        kind: "Demo"
+
     }
+
+
+ 
 
 ];
 
 const projects = [
     {
         name: "Demo Project 1",
-        details: "Demo project for demoing projects",
-        kind: "Demo"
+        details: "This is the first project",
+        kind: "Demo",
+        manager: "Demo Project Manager",
+        author: "Demo Admin",
+        created: "7/6/2019"
 
     },
 
     {
-        name: "Hog",
-        details: "Game for practicing oop nad hof",
-        kind: "Demo"
+        name: "Demo Project 2",
+        details: "Project number 2",
+        kind: "Demo",
+        manager: "Demo Project Manager",
+        author: "Demo Admin",
+        created: "5/20/2020"
 
     },
 
     {
-        name: "Ants",
-        details: "Game for practicing recursion",
-        kind: "Demo"
+        name: "Bug Tracker",
+        details: "Issue tracking application",
+        kind: "Demo",
+        manager: "Demo Project Manager",
+        author: "Demo Admin",
+        created: "6/11/2020"
 
     }
 ];
 
 const tickets = [
     {
+        priority: "Critical",
+        type: "Task",
+        created: "9/4/2020 7:15 AM",
+        title: "Website unresponsive",
+        status: "Resolved",
+        details: "Site becomes very slow when active users reach a certain number",
+        kind: "Demo",
+        developer: "Demo Developer",
+        submitter: "Demo Submitter",
+        project: "Demo Project 2"
+
+    },
+    {
         priority: "High",
         type: "Bug",
-        created: "10 am Tuesday",
+        created: "8/22/2020 5:06 AM",
         title: "Problem with UI",
-        status: "Not done",
-        details: "There is an error where it still shows a user is logged in after exiting",
-        kind: "Demo"
+        status: "New",
+        details: "Interface is distorted on mobile devices",
+        kind: "Demo",
+        developer: "Natan Franco",
+        submitter: "Demo Submitter",
+        project: "Demo Project 1"
 
     },
     {
         priority: "Low",
-        type: "Minor Fix",
-        created: "8 am Monday",
+        type: "Bug",
+        created: "8/24/2020 10:23 PM",
         title: "Blip on homepage",
         status: "In Progress",
         details: "A small black box in the corner of the homepage",
-        kind: "Demo"
-    },
-    {
-        priority: "Critical",
-        type: "Crash",
-        created: "9 pm Thursay",
-        title: "Product crashes in situations",
-        status: "In Progress",
-        details: "Server fails when users try to enter an invalid url",
-        kind: "Demo"
-
+        kind: "Demo",
+        developer: "Demo Developer",
+        submitter: "Demo Submitter",
+        project: "Demo Project 1"
     },
     {
         priority: "Medium",
-        type: "Update",
-        created: "5 pm Thursay",
+        type: "Feature",
+        created: "8/25/2020 8:52 AM",
         title: "Color on front page",
-        status: "Not done",
+        status: "Need More Info",
         details: "Add appropriate coloring the front page",
-        kind: "Demo"
+        kind: "Demo",
+        developer: "Saara Sharpe",
+        submitter: "Demo Submitter",
+        project: "Demo Project 2"
 
     },
     {
         priority: "Medium",
-        type: "Update",
-        created: "10 hours ago",
-        title: "Talk with marketing",
-        status: "Not started",
-        details: "Go over logistics with marketing team",
-        kind: "Demo"
+        type: "Improvement",
+        created: "8/21/2020 11:23 PM",
+        title: "Add more user options",
+        status: "New",
+        details: "Add more customization in profile",
+        kind: "Demo",
+        developer: "Demo Developer",
+        submitter: "Demo Submitter",
+        project: "Demo Project 2"
 
     },
     {
         priority: "Medium",
         type: "Bug",
-        created: "10 am Wednesday",
-        title: "User data not updating",
-        status: "In progress",
-        details: "After making a purchase, user data is not getting updated",
+        created: "8/22/2020 10:11 AM",
+        title: "Data not updating properly",
+        status: "Open",
+        details: "After making an edit, change is not always reflected",
         kind: "Demo",
+        developer: "Demo Developer",
+        submitter: "Demo Submitter",
+        project: "Bug Tracker"
 
     },
     {
         priority: "High",
-        type: "Fix",
-        created: "5 mins ago",
-        title: "Page not loading",
-        status: "Not started",
-        details: "Page takes too long to load and sometimes gets stuck",
-        kind: "Demo"
+        type: "Improvement",
+        created: "9/1/2020 5:31 PM",
+        title: "Auth properties",
+        status: "In Progress",
+        details: "Change authorization so anybody can edit a ticket",
+        kind: "Demo",
+        developer: "Demo Developer",
+        submitter: "Demo Submitter",
+        project: "Bug Tracker"
 
     }
 ];
 
 const comments = [
     {
-        message: "Just finished updating site",
-        created: "2 hours ago",
-        kind: "Demo"
+        author: "Demo PM",
+        message: "Please have this fixed asap",
+        created: "9/4/2020 6:02 AM",
+        kind: "Demo",
+        ticket: "Website"
     },
     {
-        message: "Handled bug on home page",
-        created: "4 days ago",
-        kind: "Demo"
+        author: "Demo Developer",
+        message: "Just fixed issue",
+        created: "9/4/2020 8:21 PM",
+        kind: "Demo",
+        ticket: "Website"
     },
     {   
-        message: "Fixed problem with coloring",
-        created: "4 weeks ago",
-        kind: "Demo"
+        author: "Demo Developer",
+        message: "I'm having trouble finding when the bug occurs",
+        created: "8/25/2020 11:20 AM",
+        kind: "Demo",
+        ticket: "Blip"
+    },
+    {   
+        author: "Demo Developer",
+        message: "Do we want developers to be able to edit?",
+        created: "9/2/2020 10:20 AM",
+        kind: "Demo",
+        ticket: "Auth"
+    },
+    {   
+        author: "Demo Submitter",
+        message: "No, but make it show for all other roles",
+        created: "9/3/2020 3:41 PM",
+        kind: "Demo",
+        ticket: "Auth"
     }
 ];
 
 
-const seedUsers = () => {
-    User.deleteMany({kind: "Demo"}, (err) => {
+function seedUsers() {
+    User.deleteMany({kind: "Demo"}, function(err) {
+        User.deleteMany({kind: "N/A"}, function(err) {
+            if (err) {
+                console.log(err.message);
+            } else {
+                //console.log("removed demo users");
+                users.forEach(function(account) {
+                    const newUser = {username: account.username, email: account.email, role: account.role, kind: "Demo"};
+                    User.register(newUser, account.password, function(err, createdUser) {
+                        if (err) {
+                            console.log(err.message);
+                        } else {
+                            //console.log("added a user");
+                        }
+    
+                    });
+    
+    
+                });
+    
+            }
+
+
+
+        })
+
+        
+    });
+
+
+};
+
+function seedProjects() {
+    Project.deleteMany({kind: "Demo"}, function(err) {
         if (err) {
             console.log(err.message);
         } else {
-            console.log("removed demo users");
-            users.forEach((account) => {
-                const newUser = {username: account.username, email: account.email, role: account.role};
-                User.register(newUser, account.password, (err, createdUser) => {
+            //console.log("removed demo projects");
+            projects.forEach(function(project) {
+                Project.create(project, function(err, createdProject) {
                     if (err) {
                         console.log(err.message);
                     } else {
-                        console.log("added a user");
-                    }
-
-                });
-
-
-            });
-
-        }
-
-
-    });
-};
-
-const seedProject = () => {
-    Project.deleteMany({kind: "Demo"}, (err) => {
-        if (err) {
-            console.log(err.message);
-        } else {
-            console.log("removed demo projects");
-            projects.forEach((project) => {
-                Project.create(project, (err, createdProject) => {
-                    if (err) {
-                        console.log(err.message);
-                    } else {
-                        console.log("added a project");
+                        //console.log("added a project");
+                        
                     }
                 });
 
@@ -212,53 +292,63 @@ const seedProject = () => {
         }
 
     });
+
+    
 };
 
-const seedTickets = () => {
-    Ticket.deleteMany({kind: "Demo"}, (err) => {
+function seedTickets () {
+    Ticket.deleteMany({kind: "Demo"}, function(err) {
         if (err) {
             console.log(err.message);
         } else {
-            console.log("removed demo tickets");
+            //console.log("removed demo tickets");
             tickets.forEach((ticket) => {
-                Ticket.create(ticket, (err, createdTicket) => {
+                Ticket.create(ticket, function(err, createdTicket) {
                     if (err) {
                         console.log(err.message);
                     } else {
-                        console.log("added a ticket");
+                        //console.log("added a ticket");
                     }
                 });
             });
         }
+    
     });
+
+
 };
 
 
-const seedComments = () => {
-    Comment.deleteMany({kind: "Demo"}, (err) => {
+function seedComments() {
+    Comment.deleteMany({kind: "Demo"}, function(err) {
         if (err) {
             console.log(err.message);
         } else {
-            console.log("removed demo comments");
-            comments.forEach((comment) => {
-                Comment.create(comment, (err, createdComment) => {
+            //console.log("removed demo comments");
+            comments.forEach(function(comment) {
+                Comment.create(comment, function(err, createdComment) {
                     if (err) {
                         console.log(err.message);
                     } else {
-                        console.log("added a comment");
+                        //console.log("added a comment");
                     }
                 });
             });
         }
+
     });
+
 };
 
-const seedDb = () => {
-    seedProject();
-    seedTickets();
-    seedUsers();
+
+
+function seedDb() {
     seedComments();
-};
+    seedUsers();
+    seedTickets();
+    seedProjects();
+}
+
 
 
 module.exports = seedDb;

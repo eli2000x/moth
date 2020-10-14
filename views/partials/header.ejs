@@ -3,12 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400&display=swap" rel="stylesheet">
     <link rel="icon" type="png" href="/assets/moth.png">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
-
+    <link rel="stylesheet" href="/stylesheets/index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load("current", {packages: ["corechart, bar"]});
+
+        google.charts.setOnLoadCallback(drawBasic);
+
+        function drawBasic() {
+
+
+            const arr = [
+                ["Priority", "Number of tickets", {role: "style"}],
+                ["Low", 1, "#808080"],
+                ["Medium", 2, "#FD6A02"],
+                ["High", 1, "#ffc107"],
+                ["Critical", 1, "#dc3545"]
+            ]
+    
+            var data = google.visualization.arrayToDataTable(arr);
+
+            var options = {
+                "title": "My Tickets",
+                "hAxis": {textStyle: {fontSize: 13}},
+                "chartArea": {width: '80%'},
+                "backgroundColor": "#eceff1",
+                "legend": {position: "none"},
+                "fontName": "Raleway",
+                "fontSize": 22,
+                "height": 400
+                
+                
+            };
+
+            var chart = new google.visualization.ColumnChart(document.getElementById('tickets'));
+
+            chart.draw(data, options);
+        }
+    </script>
+    <script type="text/javascript">
+        google.charts.load("current", {packages: ["corechart, bar"]});
+
+        google.charts.setOnLoadCallback(drawBasic);
+
+        function drawBasic() {
+
+
+            const arr = [
+                ["Priority", "Number of tickets", {role: "style"}],
+                ["Low", 1, "#808080"],
+                ["Medium", 3, "#FD6A02"],
+                ["High", 2, "#ffc107"],
+                ["Critical", 1, "#dc3545"]
+            ]
+    
+            var data = google.visualization.arrayToDataTable(arr);
+
+            var options = {
+                "title": 'Project Tickets by Priority',
+                "hAxis": {textStyle: {fontSize: 13}},
+                "chartArea": {width: '80%'},
+                "backgroundColor": "#eceff1",
+                "legend": {position: "none"},
+                "fontName": "Raleway",
+                "fontSize": 22,
+                "height": 400
+                
+                
+            };
+
+            var chart = new google.visualization.ColumnChart(document.getElementById('tickets_priority'));
+
+            chart.draw(data, options);
+        }
+    </script>
+    <script type="text/javascript">
+        google.charts.load("current", {packages: ["corechart, bar"]});
+
+        google.charts.setOnLoadCallback(drawBasic);
+
+        function drawBasic() {
+
+
+            const arr = [
+                ["Priority", "Number of tickets", {role: "style"}],
+                ["New", 2, "#007bff"],
+                ["Open", 1, "#28a745"],
+                ["In Progress", 2, "#ffc107"],
+                ["Resolved", 1, "#dc3545"],
+                ["Need More Info", 1, "#123456"]
+            ]
+    
+            var data = google.visualization.arrayToDataTable(arr);
+
+            var options = {
+                "title": ' Project Tickets by Status',
+                "hAxis": {textStyle: {fontSize: 13}},
+                "chartArea": {width: '80%'},
+                "backgroundColor": "#eceff1",
+                "legend": {position: "none"},
+                "fontName": "Raleway",
+                "fontSize": 22,
+                "height": 400
+                
+                
+            };
+
+            var chart = new google.visualization.ColumnChart(document.getElementById('tickets_status'));
+
+            chart.draw(data, options);
+        }
+    </script>
+
+    <script type="text/javascript">
+        google.charts.load("current", {packages: ["corechart"]});
+
+        google.charts.setOnLoadCallback(drawBasic);
+
+        function drawBasic() {
+
+
+            const arr = [
+                ["Priority", "Number of tickets", {role: "style"}],
+                ["Bug", 3, "#007bff"],
+                ["Task", 1, "#28a745"],
+                ["Feature", 1, "#ffc107"],
+                ["Improvement", 2, "#dc3545"]
+            ]
+
+            var data = google.visualization.arrayToDataTable(arr);
+
+            var options = {
+                "title": ' Project Tickets by Type',
+                "chartArea": {width: '80%'},
+                "backgroundColor": "#eceff1",
+                "fontName": "Raleway",
+                "legend": {position: "bottom", textStyle: {fontSize: 15}},
+                "fontSize": 22,
+                "height": 400,
+                "pieSliceText": "value", 
+                "pieHole": 0.4
+                
+                
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('tickets_type'));
+
+            chart.draw(data, options);
+        }
+    </script>
+
+</head>
+
+
+
+
+    
+  
+
     
 
-   
+
+    
+
+    
+  
+    

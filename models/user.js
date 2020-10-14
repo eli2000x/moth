@@ -6,7 +6,25 @@ const userSchema = new mongoose.Schema({
     username: String,
     password: String,
     email: String,
-    role: String
+    role: String,
+    kind: String,
+    
+
+    projects: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Project"
+        }
+    ],
+
+    tickets: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Ticket"
+        }
+    ],
+
+
 });
 
 userSchema.plugin(passportLocalMongoose);

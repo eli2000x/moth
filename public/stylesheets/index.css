@@ -4,29 +4,49 @@ body {
     
 }
 
-.center {
-    display: block;
-    margin: 0 auto;
-    width: 50%;
-    text-align: center;
-}
-.login {
-    margin: 12rem auto;
-}
-
-.register {
-    margin: 10rem auto;
-}
-
-.demo_user {
-    color: #343a40;
+hr {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
 }
 
 .error {
     color: #c62928;
     font-size: 12px;
 }
+
+.center {
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+    text-align: center;
+}
+
+.demo_user {
+    color: #343a40;
+}
+
+.bord {
+    border: 15px solid #343a40;
+    height: 450px;
+}
+
 .none {
     border: none;
     background: none;
 }
+
+.graph {
+    border: 15px solid #343a40;
+}
+
+#cent {
+    margin: auto auto;
+}
+
+.width {
+    width: 49%
+}
+
+

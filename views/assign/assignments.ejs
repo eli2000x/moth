@@ -1,0 +1,118 @@
+<%- include("../partials/header") %>
+<%- include("../partials/nav") %>
+
+
+    <title>My Assignments - Moth</title>
+
+</head>
+<body>
+
+    <div class="container my-3 graph" >
+        <h1 class="display-5 my-3">My Tickets</h1>
+        <% if (currentUser.role !== "Developer") { %>
+            <a class="btn btn-primary" href="\ticket\new" role="button">Create New Ticket</a>
+        <% } %>
+
+        <% if (user.kind === "Demo" || user.kind === "N/A") { %>
+            <table class="table">
+
+                <thead>
+                    <tr>
+                        <th scope="col">Title</th>
+                        <th scope="col">Project</th>
+                        <th scope="col">Priority</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Type</th>
+                        <th scope="col">Created on</th>
+                    </tr>
+                </thead>
+    
+                <tbody>
+    
+                    <% user.tickets.forEach(function(ticket) { %>
+                            <tr>    
+                                <td><%= ticket.title %></td>
+                                <td><%= ticket.project %></td>
+                                <td><%= ticket.priority %></td>
+                                <td><%= ticket.status %></td>
+                                <td><%= ticket.type %></td>
+                                <td><%= ticket.created %></td>
+                                <td><a href="/ticket/<%= ticket._id %>/view">View Details</a></td>
+        
+                            </tr>
+                        
+    
+                    <% }) %>
+    
+    
+                </tbody>
+            </table>
+
+
+        <% } %>
+
+        <% if (user.kind !== "Demo" && user.kind !== "N/A") { %>
+            <h2 class="d-flex justify-content-center my-5"><em>You do not have any tickets</em></h2>
+
+
+        <% } %>
+       
+    </div>
+
+    <div class="container my-3 graph">
+        
+        <h1 class="display-5 my-3">My Projects</h1>
+        <% if (currentUser.role === "Admin") { %>
+            <a class="btn btn-primary" href="\project\new" role="button">Create New Project</a>
+        <% } %>
+
+        <% if (user.kind === "Demo" || user.kind === "N/A") { %>
+            <table class="table">
+
+                <thead>
+                    <tr>
+                        <th scope="col">Project Name</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Created by</th>
+                        
+                    </tr>
+                </thead>
+    
+                <tbody>
+    
+                    <% user.projects.forEach(function(project) { %>
+                        <tr>    
+                            <td><%= project.name %></td>
+                            <td><%= project.details %></td>
+                            <td><%= project.author %> on <%= project.created %></td>
+                            <td><a href="/project/<%= project._id %>/view">View Details</a></td>
+                
+                        </tr>
+    
+                    <% }) %>
+    
+    
+                </tbody>
+            </table>
+
+
+        <% } %>
+
+        <% if (user.kind !== "Demo" && user.kind !== "N/A") { %>
+            <h2 class="d-flex justify-content-center my-5"><em>You do not have any projects</em></h2>
+
+
+        <% } %>
+        
+    </div>
+
+
+
+
+
+
+
+
+
+
+<%- include("../partials/footer") %>
