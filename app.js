@@ -21,10 +21,7 @@ const projectRoutes = require("./routes/project"),
       
 
 const port = process.env.PORT || 3000;
-
-const db = "demo"
-const url = `mongodb+srv://eli:${process.env.PW}@cluster0.am3un.mongodb.net/${db}?retryWrites=true&w=majority`
-const db_url = url || "mongodb://localhost/db"
+const db_url = process.env.DB_url || "mongodb://localhost/db"
 
 
 
