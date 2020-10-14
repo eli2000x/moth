@@ -18,6 +18,7 @@ router.post("/ticket/new", middleware.isNotDev, (req, res) => {
     var time = d.toLocaleString("en-US", {hour: "numeric", minute: "numeric", hour12: true})
     var dateCreated = `${d.getMonth() + 1}/${d.getDate()}/${d.getFullYear()} ${time}`
     ticket.created = dateCreated
+    ticket.kind = "Demo"
 
     User.findOne({username: req.body.ticket.developer}, (err, foundDev) => {
         if (err || !foundDev) {
@@ -84,6 +85,7 @@ router.post("/ticket/:id/comment", middleware.isLoggedIn, (req, res) => {
     var dateCreated = `${d.getMonth() + 1}/${d.getDate()}/${d.getFullYear()} ${time}`
     comment.created = dateCreated
     comment.author = req.user.username
+    comment.kind = "Demo"
 
     Ticket.findById(req.params.id, (err, foundTicket) => {
         if (err || !foundTicket) {

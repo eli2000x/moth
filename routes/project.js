@@ -15,6 +15,7 @@ router.post("/project/new", middleware.isAdmin, (req, res) => {
     var dayCreated = `${day.getMonth() + 1}/${day.getDate()}/${day.getFullYear()}`
     project.author = req.user.username
     project.created = dayCreated
+    project.kind = "Demo"
 
     User.findOne({username: "Demo Developer"}, (err, foundUser) => {
         if (err || !foundUser) {
