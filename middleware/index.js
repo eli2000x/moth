@@ -1,5 +1,6 @@
 const middleware = {}
 
+// check for proper auth
 middleware.isAuthorized = (req, res, next) => {
     if (req.isAuthenticated() && req.user) {
         if (req.user.role === "Admin" || req.user.role === "PM") {
