@@ -21,8 +21,8 @@ const projectRoutes = require("./routes/project"),
       
 
 const port = process.env.PORT || 3000;
-const db_url = process.env.DB_url || "mongodb://localhost/db"
-
+const db_url = process.env.DB_URL || "mongodb://localhost/db"
+const secret = process.env.SECRET || "bettersecret"
 
 
 mongoose.connect(db_url, {
@@ -45,7 +45,7 @@ app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
 app.use(flash());
 app.use(session({
-    secret: "Mochi is nicest cat",
+    secret,
     resave: false,
     saveUninitialized: false,
 }))
