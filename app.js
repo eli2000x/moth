@@ -5,6 +5,9 @@ const methodOverride = require("method-override"),
       passport       = require("passport"),
       LocalStrategy  = require("passport-local"),
       session        = require("express-session"),
+      MongoStore     = require("connect-mongo")(session),
+      dotenv         = require("dotenv"),
+      result         = dotenv.config(),
       User           = require("./models/user"),
       Ticket         = require("./models/ticket"),
       Project        = require("./models/project"),
@@ -14,6 +17,8 @@ const methodOverride = require("method-override"),
       seedDb         = require("./seed"),
       add            = require("./add")
       
+      
+
 const projectRoutes = require("./routes/project"),
       manageRoutes  = require("./routes/manage"),
       indexRoutes   = require("./routes/index"),
@@ -21,8 +26,8 @@ const projectRoutes = require("./routes/project"),
       
 
 const port = process.env.PORT || 3000;
-const db_url = process.env.DB_URL || "mongodb://localhost/db"
-const secret = process.env.SECRET || "bettersecret"
+const secret = process.env.SECRET || "goodsecret"
+const db_url = process.env.DB_URL
 
 
 mongoose.connect(db_url, {
@@ -48,6 +53,11 @@ app.use(session({
     secret,
     resave: false,
     saveUninitialized: false,
+    store: new MongoStore({
+        url: db_url,
+        secret,
+        touchAfer: 24 * 60 * 60
+    })
 }))
 
 app.use(passport.initialize());

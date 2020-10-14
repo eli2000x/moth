@@ -14,7 +14,7 @@ router.get("/", (req, res) => {
 router.get("/add", (req, res) => {
     seedDb()
     setTimeout(add, 3000)
-    res.redirect("/back")
+    res.redirect("back")
 })
 
 router.get("/home", middleware.isLoggedIn, (req, res) => {
