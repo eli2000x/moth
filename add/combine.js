@@ -3,8 +3,8 @@ const Ticket = require("../models/ticket")
 const Comment = require("../models/comment")
 const Project = require("../models/project")
 
-const addComments = require("./add/comments")
-const addTickets = require("./add/tickets")
+const addComments = require("./comments")
+const addTickets = require("./tickets")
 
 function add() {
     addComments()

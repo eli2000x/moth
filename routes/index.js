@@ -3,8 +3,8 @@ const router = express.Router();
 const passport = require("passport")
 const middleware = require("../middleware")
 const User = require("../models/user")
-const seedDb = require("../seed")
-const add = require("../add")
+const seedDb = require("../seed/combine")
+const add = require("../add/combine")
 
 router.get("/", (req, res) => {
     res.redirect("/login");
