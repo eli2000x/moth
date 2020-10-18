@@ -330,7 +330,6 @@ function seedComments() {
 };
 
 
-
 function seedDb() {
     seedComments();
     seedUsers();
