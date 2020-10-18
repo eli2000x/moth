@@ -12,8 +12,8 @@ const methodOverride = require("method-override"),
       Comment        = require("./models/comment"),
       middleware     = require("./middleware/index"),
       app            = express(),
-      seedDb         = require("./seed"),
-      add            = require("./add")
+      seedDb         = require("./seed/combine"),
+      add            = require("./add/combine")
       
       
 
