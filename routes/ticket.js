@@ -1,7 +1,7 @@
 
 const express = require("express");
 const router = express.Router();
-const middleware = require("../middleware")
+const middleware = require("../middleware/mid")
 const User = require("../models/user")
 const Ticket = require("../models/ticket")
 const Comment = require("../models/comment")
