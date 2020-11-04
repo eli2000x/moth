@@ -16,7 +16,7 @@ router.post("/ticket/new", middleware.isNotDev, (req, res) => {
     const ticket = req.body.ticket
     var d = new Date();
     var time = d.toLocaleString("en-US", {hour: "numeric", minute: "numeric", hour12: true})
-    var dateCreated = `${d.getMonth() + 1}/${d.getDate()}/${d.getFullYear()} ${time}`
+    var dateCreated = `${d.getMonth() + 1}/${d.getDate()}/${d.getFullYear()}`
     ticket.created = dateCreated
     ticket.kind = "Demo"
 
